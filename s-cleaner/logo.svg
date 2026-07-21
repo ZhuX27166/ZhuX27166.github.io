@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#29B6F6"/>
+      <stop offset="100%" stop-color="#0288D1"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)"/>
+  <!-- Stylized white broom/cleaner icon -->
+  <g fill="#FFFFFF" transform="translate(40, 40) scale(0.85)">
+    <!-- Handle -->
+    <rect x="300" y="50" width="40" height="200" rx="20" transform="rotate(45, 320, 150)"/>
+    <!-- Brush body -->
+    <path d="M120 280l-40 100c-5 12 3 25 16 25h232c13 0 21-13 16-25l-40-100H120z"/>
+    <!-- Brush bristles lines -->
+    <rect x="135" y="415" width="20" height="30" rx="5"/>
+    <rect x="185" y="415" width="20" height="30" rx="5"/>
+    <rect x="235" y="415" width="20" height="30" rx="5"/>
+    <rect x="285" y="415" width="20" height="30" rx="5"/>
+    <!-- Splash stars / shine -->
+    <path d="M100 120l10 25 25 10-25 10-10 25-10-25-25-10 25-10z"/>
+    <path d="M380 300l6 15 15 6-15 6-6 15-6-15-15-6 15-6z"/>
+  </g>
+</svg>

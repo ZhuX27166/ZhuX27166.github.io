@@ -1,1 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Four Allies Studio - Simple Tools for a Better Mobile Life. We develop easy-to-use, reliable, and secure mobile apps for cleaning, puzzle gaming, and video downloading.">
+  <meta name="keywords" content="Four Allies Studio, mobile apps, video downloader, s cleaner, word search, puzzle games, phone tools">
+  <title>Four Allies Studio - Simple Tools for a Better Mobile Life</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  
+  <!-- Google Fonts: Inter and Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#" class="logo-area">
+        <img src="logo.svg" alt="Four Allies Studio Logo" class="app-logo">
+        <span class="app-name">Four Allies Studio</span>
+      </a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home" class="active" data-i18n="nav_home">Home</a></li>
+          <li><a href="#apps" data-i18n="nav_apps">Apps</a></li>
+          <li><a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a></li>
+          <li><a href="mailto:contact@fouralliesstudio.com" data-i18n="nav_contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <!-- Language Selector -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+            <svg class="globe-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+            </svg>
+            <span id="currentLangName">English</span>
+            <svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu">
+            <button role="menuitem" data-lang="en">English</button>
+            <button role="menuitem" data-lang="zh">简体中文</button>
+            <button role="menuitem" data-lang="ja">日本語</button>
+            <button role="menuitem" data-lang="ko">한국어</button>
+            <button role="menuitem" data-lang="fr">Français</button>
+            <button role="menuitem" data-lang="de">Deutsch</button>
+            <button role="menuitem" data-lang="id">Bahasa Indonesia</button>
+            <button role="menuitem" data-lang="th">ไทย</button>
+            <button role="menuitem" data-lang="vi">Tiếng Việt</button>
+          </div>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container hero-container">
+        <!-- Hero Text -->
+        <div class="hero-content">
+          <span class="hero-badge" data-i18n="hero_studio">FOUR ALLIES STUDIO</span>
+          <h1 class="hero-title" data-i18n="hero_title">
+            Simple Tools for<br>a Better Mobile Life
+          </h1>
+          <p class="hero-desc" data-i18n="hero_desc">
+            We build easy-to-use, reliable apps that help you solve everyday problems and enjoy your mobile experience.
+          </p>
+          <div class="hero-buttons">
+            <a href="#apps" class="btn-primary" data-i18n="hero_cta">Explore Our Apps</a>
+          </div>
+        </div>
+        
+        <!-- Animated Mockup / Icon Illustration -->
+        <div class="hero-illustration">
+          <div class="ill-circle-bg"></div>
+          <!-- Centered Phone Mockup -->
+          <div class="ill-phone">
+            <div class="ill-phone-frame">
+              <div class="ill-phone-screen">
+                <div class="notch"></div>
+                <div class="status-bar">
+                  <span>12:00</span>
+                  <div class="status-icons">
+                    <span>📶</span>
+                    <span>🔋</span>
+                  </div>
+                </div>
+                
+                <div class="phone-header">
+                  <div class="phone-logo">F</div>
+                  <span class="phone-brand">Four Allies Studio</span>
+                </div>
+                
+                <div class="phone-hub-list">
+                  <a href="word-search/index.html" class="hub-item">
+                    <div class="hub-item-left">
+                      <img src="icon/word_puzzle.webp" class="hub-icon" alt="Word Search">
+                      <div class="hub-meta">
+                        <span class="hub-name">Word Search</span>
+                        <span class="hub-tag">Puzzle</span>
+                      </div>
+                    </div>
+                    <button class="hub-btn btn-purple">PLAY</button>
+                  </a>
+                  
+                  <a href="s-cleaner/index.html" class="hub-item">
+                    <div class="hub-item-left">
+                      <img src="icon/s-cleaner.webp" class="hub-icon" alt="S Cleaner">
+                      <div class="hub-meta">
+                        <span class="hub-name">S Cleaner</span>
+                        <span class="hub-tag">Cleaner</span>
+                      </div>
+                    </div>
+                    <button class="hub-btn btn-blue">CLEAN</button>
+                  </a>
+                  
+                  <a href="photo-cleaner/index.html" class="hub-item">
+                    <div class="hub-item-left">
+                      <img src="icon/photo-cleaner.webp" class="hub-icon" alt="Photo Cleaner">
+                      <div class="hub-meta">
+                        <span class="hub-name">Photo Cleaner</span>
+                        <span class="hub-tag">Tools</span>
+                      </div>
+                    </div>
+                    <button class="hub-btn btn-purple">SCAN</button>
+                  </a>
+                  
+                  <a href="v-downloader/index.html" class="hub-item">
+                    <div class="hub-item-left">
+                      <img src="icon/v-downloader.png" class="hub-icon" alt="V Downloader">
+                      <div class="hub-meta">
+                        <span class="hub-name">V Downloader</span>
+                        <span class="hub-tag">Downloader</span>
+                      </div>
+                    </div>
+                    <button class="hub-btn btn-red">GET</button>
+                  </a>
+                        <a href="translive-wallpaper/index.html" class="hub-item">
+                    <div class="hub-item-left">
+                      <img src="icon/translive-wallpaper.webp" class="hub-icon" alt="TransLive">
+                      <div class="hub-meta">
+                        <span class="hub-name">TransLive</span>
+                        <span class="hub-tag">Wallpapers</span>
+                      </div>
+                    </div>
+                    <button class="hub-btn btn-green">SET</button>
+                  </a>
+                  
+                  <a href="fill-one-line/index.html" class="hub-item">
+                    <div class="hub-item-left">
+                      <img src="icon/fill-one-line.webp" class="hub-icon" alt="Fill One Line">
+                      <div class="hub-meta">
+                        <span class="hub-name">Fill One Line</span>
+                        <span class="hub-tag">Puzzle</span>
+                      </div>
+                    </div>
+                    <button class="hub-btn btn-orange">PLAY</button>
+                  </a>
+                  
+                  <div class="hub-widget">
+                    <span class="widget-title">System Status</span>
+                    <div style="display:flex; align-items:center; gap:6px;">
+                      <div class="wave-lines">
+                        <span></span><span></span><span></span>
+                      </div>
+                      <span class="widget-status">Secured</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Floating App Icons -->
+          <a href="word-search/index.html" class="float-icon float-1">
+            <img src="icon/word_puzzle.webp" alt="Word Search" title="Word Search">
+          </a>
+          <a href="s-cleaner/index.html" class="float-icon float-2">
+            <img src="icon/s-cleaner.webp" alt="S Cleaner" title="S Cleaner">
+          </a>
+          <a href="photo-cleaner/index.html" class="float-icon float-3">
+            <img src="icon/photo-cleaner.webp" alt="Photo Cleaner" title="Photo Cleaner">
+          </a>
+          <a href="v-downloader/index.html" class="float-icon float-4">
+            <img src="icon/v-downloader.png" alt="Video Downloader" title="Video Downloader">
+          </a>
+          <a href="translive-wallpaper/index.html" class="float-icon float-5">
+            <img src="icon/translive-wallpaper.webp" alt="TransLive Wallpaper" title="TransLive Wallpaper">
+          </a>
+          <a href="fill-one-line/index.html" class="float-icon float-6">
+            <img src="icon/fill-one-line.webp" alt="Fill One Line" title="Fill One Line">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Apps Grid Section -->
+    <section id="apps" class="apps-grid-section">
+      <div class="container">
+        <h2 class="apps-grid-title" data-i18n="apps_title">Our Apps</h2>
+        
+        <div class="apps-grid">
+          <a href="word-search/index.html" class="app-card">
+            <div class="app-card-header">
+              <img src="icon/word_puzzle.webp" alt="Word Search Icon" class="app-card-icon-wrap">
+              <div class="app-card-meta">
+                <h3 data-i18n="app_word_title">Word Search</h3>
+                <span class="app-card-category" data-i18n="app_word_tag">Word • Puzzle</span>
+              </div>
+            </div>
+            <p class="app-card-desc" data-i18n="app_word_desc">Train your brain with thousands of word search puzzles.</p>
+            <div class="app-card-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span class="rating-val">4.8</span>
+            </div>
+          </a>
+          
+          <!-- App 2: S Cleaner -->
+          <a href="s-cleaner/index.html" class="app-card">
+            <div class="app-card-header">
+              <img src="icon/s-cleaner.webp" alt="S Cleaner Icon" class="app-card-icon-wrap">
+              <div class="app-card-meta">
+                <h3 data-i18n="app_clean_title">S Cleaner</h3>
+                <span class="app-card-category" data-i18n="app_clean_tag">Cleaner • Tools</span>
+              </div>
+            </div>
+            <p class="app-card-desc" data-i18n="app_clean_desc">Clean junk files, boost phone speed and save storage space.</p>
+            <div class="app-card-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span class="rating-val">4.7</span>
+            </div>
+          </a>
+          
+          <!-- App 3: Photo Cleaner -->
+          <a href="photo-cleaner/index.html" class="app-card">
+            <div class="app-card-header">
+              <img src="icon/photo-cleaner.webp" alt="Photo Cleaner Icon" class="app-card-icon-wrap">
+              <div class="app-card-meta">
+                <h3 data-i18n="app_photo_title">Photo Cleaner</h3>
+                <span class="app-card-category" data-i18n="app_photo_tag">Tools • Cleaner</span>
+              </div>
+            </div>
+            <p class="app-card-desc" data-i18n="app_photo_desc">Find and remove similar photos to free up valuable space.</p>
+            <div class="app-card-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span class="rating-val">4.6</span>
+            </div>
+          </a>
+          
+          <!-- App 4: Video Downloader -->
+          <a href="v-downloader/index.html" class="app-card">
+            <div class="app-card-header">
+              <img src="icon/v-downloader.png" alt="Video Downloader Icon" class="app-card-icon-wrap">
+              <div class="app-card-meta">
+                <h3 data-i18n="app_video_title">Video Downloader</h3>
+                <span class="app-card-category" data-i18n="app_video_tag">Tools • Downloader</span>
+              </div>
+            </div>
+            <p class="app-card-desc" data-i18n="app_video_desc">Download videos from social media quickly and easily.</p>
+            <div class="app-card-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span class="rating-val">4.7</span>
+            </div>
+          </a>
+          
+          <!-- App 5: Fill One Line -->
+          <a href="fill-one-line/index.html" class="app-card">
+            <div class="app-card-header">
+              <img src="icon/fill-one-line.webp" alt="Fill One Line Icon" class="app-card-icon-wrap">
+              <div class="app-card-meta">
+                <h3 data-i18n="app_fill_title">Fill One Line</h3>
+                <span class="app-card-category" data-i18n="app_fill_tag">Puzzle • Game</span>
+              </div>
+            </div>
+            <p class="app-card-desc" data-i18n="app_fill_desc">Connect all the dots in one line. Simple to play, hard to master!</p>
+            <div class="app-card-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span class="rating-val">4.6</span>
+            </div>
+          </a>
+          
+          <!-- App 6: TransLive Wallpaper -->
+          <a href="translive-wallpaper/index.html" class="app-card">
+            <div class="app-card-header">
+              <img src="icon/translive-wallpaper.webp" alt="TransLive Wallpaper Icon" class="app-card-icon-wrap">
+              <div class="app-card-meta">
+                <h3 data-i18n="app_wall_title">TransLive Wallpaper</h3>
+                <span class="app-card-category" data-i18n="app_wall_tag">Personalization</span>
+              </div>
+            </div>
+            <p class="app-card-desc" data-i18n="app_wall_desc">Stunning live wallpapers to personalize your home screen.</p>
+            <div class="app-card-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span class="rating-val">4.7</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured App Section (V Downloader) -->
+    <section class="featured-app-section">
+      <div class="container featured-container-box">
+        <!-- Main details -->
+        <div class="featured-left">
+          <span class="featured-badge" data-i18n="feat_badge">Featured App</span>
+          <h2 class="featured-title" data-i18n="feat_title">V Downloader</h2>
+          <span class="featured-tagline text-primary" data-i18n="feat_tagline">Fast. Easy. Powerful.</span>
+          <p class="featured-desc" data-i18n="feat_desc">
+            Download videos from popular websites and social media quickly and securely.
+          </p>
+          
+          <a href="https://play.google.com/store/apps/details?id=com.fsvideo.downloader.faster.social.video.app" class="featured-store-btn" target="_blank" rel="noopener noreferrer">
+            <img src="google-play-badge.svg" alt="Get V Downloader on Google Play">
+          </a>
+          
+          <div class="featured-checklist">
+            <div class="chk-item">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chk-icon"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span data-i18n="feat_check_fast">Fast Download</span>
+            </div>
+            <div class="chk-item">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chk-icon"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span data-i18n="feat_check_hd">HD Quality</span>
+            </div>
+            <div class="chk-item">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chk-icon"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span data-i18n="feat_check_ads">No Ads</span>
+            </div>
+            <div class="chk-item">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chk-icon"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span data-i18n="feat_check_secure">Secure</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dual Phone Mockups (Reused from previous V Downloader page) -->
+        <div class="featured-mockups">
+          <div class="f-phone phone-1">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="phone-header">
+                  <div class="ph-title">V Downloader</div>
+                </div>
+                <!-- Mini search mock -->
+                <div class="ph-search">
+                  <span>Search or paste link</span>
+                  <div class="ph-btn-paste">Paste</div>
+                </div>
+                <!-- Popular list -->
+                <div class="ph-grid">
+                  <span class="g-item yt"></span>
+                  <span class="g-item fb"></span>
+                  <span class="g-item ig"></span>
+                  <span class="g-item tk"></span>
+                  <span class="g-item tw"></span>
+                  <span class="g-item vm"></span>
+                </div>
+                <!-- Tips -->
+                <div class="ph-tips">
+                  <div class="ph-tips-t">How to download?</div>
+                  <div class="ph-tips-d">Learn to download in 3 steps</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="f-phone phone-2">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="phone-header list-header">
+                  <div class="ph-title">Downloads</div>
+                </div>
+                <div class="ph-tabs">
+                  <span class="active">All</span>
+                  <span>Finished</span>
+                </div>
+                <div class="ph-list">
+                  <div class="ph-list-item">
+                    <span class="ph-thumb item-1"></span>
+                    <div class="ph-details">
+                      <span class="ph-name">Beautiful Nature.mp4</span>
+                      <span class="ph-status">Completed</span>
+                    </div>
+                  </div>
+                  <div class="ph-list-item">
+                    <span class="ph-thumb item-2"></span>
+                    <div class="ph-details">
+                      <span class="ph-name">City Lights.mp4</span>
+                      <span class="ph-status">Completed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Key Highlights (Right side) -->
+        <div class="featured-right">
+          <!-- Item 1 -->
+          <div class="high-item">
+            <div class="high-icon-wrap">
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="high-text">
+              <h4 data-i18n="high_platforms_title">Multiple Platforms</h4>
+              <p data-i18n="high_platforms_desc">Support popular websites and social media.</p>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="high-item">
+            <div class="high-icon-wrap">
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+            </div>
+            <div class="high-text">
+              <h4 data-i18n="high_easy_title">Easy to Use</h4>
+              <p data-i18n="high_easy_desc">Just copy, paste and download.</p>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="high-item">
+            <div class="high-icon-wrap">
+              <span class="hd-badge-sm">HD</span>
+            </div>
+            <div class="high-text">
+              <h4 data-i18n="high_hq_title">High Quality</h4>
+              <p data-i18n="high_hq_desc">Support HD videos up to 4K.</p>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="high-item">
+            <div class="high-icon-wrap">
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div class="high-text">
+              <h4 data-i18n="high_safe_title">Safe & Secure</h4>
+              <p data-i18n="high_safe_desc">We respect your privacy and data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Indicator Bar -->
+    <section class="trust-bar-section">
+      <div class="container trust-container">
+        <!-- Trust 1 -->
+        <div class="trust-card">
+          <div class="trust-icon-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 7.89H18v3.375"/></svg>
+          </div>
+          <h3 data-i18n="trust_updates_title">Regular Updates</h3>
+          <p data-i18n="trust_updates_desc">We constantly improve our apps for you.</p>
+        </div>
+        <!-- Trust 2 -->
+        <div class="trust-card">
+          <div class="trust-icon-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 data-i18n="trust_trusted_title">Trusted by Millions</h3>
+          <p data-i18n="trust_trusted_desc">Millions of users worldwide trust our apps.</p>
+        </div>
+        <!-- Trust 3 -->
+        <div class="trust-card">
+          <div class="trust-icon-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 data-i18n="trust_user_title">User First</h3>
+          <p data-i18n="trust_user_desc">Your feedback helps us make better apps.</p>
+        </div>
+        <!-- Trust 4 -->
+        <div class="trust-card">
+          <div class="trust-icon-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 data-i18n="trust_secure_title">Secure & Reliable</h3>
+          <p data-i18n="trust_secure_desc">100% safe apps that you can rely on.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-brand font-bold">Four Allies Studio</span>
+        <span class="footer-copy" data-i18n="footer_copy">© 2025 Four Allies Studio. All rights reserved.</span>
+      </div>
+      <div class="footer-right">
+        <a href="privacy.html" class="footer-link" data-i18n="nav_privacy">Privacy Policy</a>
+        <a href="mailto:zhux27166@gmail.com" class="footer-link" data-i18n="nav_contact">Contact Us</a>
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" class="social-icon-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="social-icon-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.107C19.52 3.545 12 3.545 12 3.545s-7.52 0-9.388.511a3.002 3.002 0 0 0-2.11 2.107C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.107c1.868.511 9.388.511 9.388.511s7.52 0 9.388-.511a3.002 3.002 0 0 0 2.11-2.107c.502-1.87.502-5.837.502-5.837s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Translation & Core Logic Scripts -->
+  <script src="i18n.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

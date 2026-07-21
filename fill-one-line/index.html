@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fill One Line - Connect the Dots, Solve the Puzzle! Fill the board with just one line. Easy to learn, hard to master.">
+  <title>Fill One Line - One Line Puzzle Game by Four Allies Studio</title>
+  <link rel="icon" type="image/webp" href="logo.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #F97316;
+      --primary-light: #FFEDD5;
+      --primary-hover: #EA580C;
+      --text-dark: #1E293B;
+      --text-medium: #475569;
+      --text-light: #64748B;
+      --bg-light: #F8FAFC;
+      --bg-white: #FFFFFF;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 25px rgba(249, 115, 22, 0.08);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-medium);
+      background-color: var(--bg-white);
+      line-height: 1.6;
+    }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-white);
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+    }
+    .logo-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--text-dark);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .header-btn {
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s ease;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+    }
+    .header-btn:hover {
+      background-color: var(--primary-hover);
+    }
+    .play-mini-icon {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+    .hero {
+      padding: 70px 0 90px 0;
+      background: radial-gradient(circle at 80% 30%, rgba(249, 115, 22, 0.05) 0%, rgba(255, 255, 255, 0) 60%);
+      overflow: hidden;
+    }
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .hero-content {
+      flex: 1;
+      max-width: 540px;
+    }
+    .app-branding {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .app-main-logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(249, 115, 22, 0.15);
+    }
+    .app-branding-text h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+    .app-branding-text h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-medium);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .features-badge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .badge-card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .badge-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .badge-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .bg-orange { background-color: rgba(249, 115, 22, 0.08); color: var(--primary); }
+    .bg-purple { background-color: rgba(124, 58, 237, 0.08); color: #7C3AED; }
+    .bg-green { background-color: rgba(16, 185, 129, 0.08); color: #10B981; }
+    .bg-blue { background-color: rgba(59, 130, 246, 0.08); color: #3B82F6; }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .play-badge-link img {
+      height: 48px;
+      transition: transform 0.2s ease;
+      display: block;
+    }
+    .play-badge-link:hover img {
+      transform: translateY(-2px);
+    }
+    .learn-more-btn {
+      background-color: var(--bg-white);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-dark);
+      padding: 0 20px;
+      height: 48px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .learn-more-btn:hover {
+      border-color: var(--text-light);
+      background-color: var(--bg-light);
+    }
+    .chevron-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Dual Phone Mockups Container */
+    .mockups-area {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: 570px;
+      max-width: 480px;
+    }
+    .iphone-device {
+      position: absolute;
+      width: 250px;
+      height: 510px;
+      border: 9px solid #0F172A;
+      border-radius: 38px;
+      background-color: var(--bg-white);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .iphone-device::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 18px;
+      background-color: #0F172A;
+      border-radius: 10px;
+      z-index: 10;
+    }
+    .phone-foreground {
+      left: 20px;
+      top: 0px;
+      z-index: 5;
+    }
+    .game-screen {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-white);
+      padding-top: 30px;
+    }
+    .game-status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .back-arrow { font-size: 1.1rem; cursor: pointer; }
+    
+    /* Puzzle grid vector rendering */
+    .puzzle-grid-box {
+      flex: 1;
+      position: relative;
+      margin: 16px;
+      border-radius: 16px;
+      border: 2px solid var(--border-color);
+      background-color: #FAF8F5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dots-canvas-replica {
+      position: relative;
+      width: 160px;
+      height: 180px;
+    }
+    .puzzle-line {
+      position: absolute;
+      background-color: var(--primary);
+      border-radius: 3px;
+    }
+    .line-v1 { left: 20px; top: 20px; width: 6px; height: 140px; }
+    .line-h1 { left: 20px; top: 160px; width: 120px; height: 6px; }
+    .line-v2 { left: 140px; top: 60px; width: 6px; height: 106px; }
+    .line-h2 { left: 80px; top: 60px; width: 66px; height: 6px; }
+    .line-v3 { left: 80px; top: 20px; width: 6px; height: 46px; }
+    .line-h3 { left: 20px; top: 20px; width: 66px; height: 6px; }
+    
+    .puzzle-dot {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      border: 3px solid white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      z-index: 5;
+      transform: translate(-5px, -5px);
+    }
+    .dot-1 { left: 20px; top: 20px; }
+    .dot-2 { left: 80px; top: 20px; }
+    .dot-3 { left: 140px; top: 20px; background-color: #E2E8F0; border-color: #CBD5E1; }
+    .dot-4 { left: 80px; top: 60px; }
+    .dot-5 { left: 140px; top: 60px; }
+    .dot-6 { left: 20px; top: 110px; }
+    .dot-7 { left: 140px; top: 110px; }
+    .dot-8 { left: 20px; top: 160px; }
+    .dot-9 { left: 140px; top: 160px; }
+    
+    .controls-row {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 14px 16px 14px;
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-color);
+    }
+    .ctrl-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .ctrl-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--bg-light);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .ctrl-circle svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--text-dark);
+    }
+    .ctrl-lbl { font-size: 0.6rem; font-weight: 700; color: var(--text-medium); }
+
+    /* Phone 2 (Levels selector board) */
+    .phone-background {
+      left: 190px;
+      top: 30px;
+      z-index: 2;
+      transform: rotate(3deg);
+    }
+    .levels-screen {
+      height: 100%;
+      background-color: var(--bg-light);
+      display: flex;
+      flex-direction: column;
+      padding: 40px 14px 20px 14px;
+    }
+    .levels-header {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .level-cell {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      box-shadow: var(--shadow-sm);
+    }
+    .level-num { font-size: 0.7rem; font-weight: 800; color: var(--text-dark); }
+    .level-stars { font-size: 0.5rem; color: #F59E0B; }
+    .level-cell-active {
+      background-color: var(--primary);
+      border-color: var(--primary-hover);
+      color: white;
+    }
+    .level-cell-active .level-num { color: white; }
+    .level-cell-locked {
+      background-color: #E2E8F0;
+      border-color: #CBD5E1;
+      color: #94A3B8;
+    }
+    .level-cell-locked svg { width: 10px; height: 10px; fill: #94A3B8; }
+
+    .love-it {
+      padding: 80px 0;
+      border-top: 1px solid var(--border-color);
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .grid-4-cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .love-card {
+      text-align: center;
+      padding: 10px;
+    }
+    .love-icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto;
+      box-shadow: var(--shadow-sm);
+    }
+    .love-icon-box svg {
+      width: 28px;
+      height: 28px;
+    }
+    .icon-brain { color: #F97316; background-color: rgba(249, 115, 22, 0.08); }
+    .icon-trophy { color: #7C3AED; background-color: rgba(124, 58, 237, 0.08); }
+    .icon-gift { color: #EC4899; background-color: rgba(236, 72, 153, 0.08); }
+    .icon-plane { color: #10B981; background-color: rgba(16, 185, 129, 0.08); }
+
+    .love-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .love-card p {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      line-height: 1.5;
+    }
+
+    .themes-sec {
+      padding: 80px 0;
+      background-color: var(--bg-light);
+      border-top: 1px solid var(--border-color);
+    }
+    .themes-header {
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .themes-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .themes-header p {
+      color: var(--text-medium);
+      font-size: 1.05rem;
+    }
+    .themes-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .theme-card {
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .theme-card:hover {
+      transform: translateY(-4px);
+    }
+    .theme-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .more-themes-card {
+      background-color: var(--primary);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+    }
+    .more-themes-card:hover {
+      background-color: var(--primary-hover);
+    }
+    .more-themes-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .more-themes-dots {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    .cta-banner-sec {
+      padding: 60px 0 80px 0;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+      border-radius: 24px;
+      padding: 40px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2);
+      color: white;
+    }
+    .cta-node-box {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+    .cta-banner-text h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .cta-banner-text p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .cta-banner-btn img {
+      height: 48px;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    .cta-banner-btn:hover img {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border-color);
+      background-color: var(--bg-white);
+      font-size: 0.9rem;
+    }
+    .footer-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .footer-logo-icon {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+    .footer-logo-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+    .footer-copyright {
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      color: var(--text-medium);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+    .social-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #F1F5F9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-medium);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .social-circle:hover {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+    .social-circle svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 992px) {
+      .hero-container { flex-direction: column; text-align: center; padding-bottom: 40px; }
+      .hero-content { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
+      .features-badge-grid { max-width: 500px; width: 100%; }
+      .mockups-area { height: 520px; margin-top: 20px; }
+      .grid-4-cols { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+      .themes-row { grid-template-columns: repeat(3, 1fr); }
+      .cta-banner { flex-direction: column; gap: 24px; text-align: center; }
+      .cta-banner-left { flex-direction: column; gap: 16px; }
+    }
+    @media (max-width: 768px) {
+      header { flex-direction: column; height: auto; padding: 16px 24px; gap: 16px; }
+      .footer-container { flex-direction: column; gap: 24px; text-align: center; }
+      .footer-right { flex-direction: column; gap: 16px; }
+    }
+    @media (max-width: 576px) {
+      .app-branding-text h1 { font-size: 1.8rem; }
+      .app-branding-text h2 { font-size: 1.4rem; }
+      .features-badge-grid { grid-template-columns: 1fr; }
+      .mockups-area { transform: scale(0.85); height: 460px; margin-bottom: -50px; }
+      .grid-4-cols { grid-template-columns: 1fr; }
+      .themes-row { grid-template-columns: repeat(2, 1fr); }
+      .theme-card:nth-child(4) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="container">
+    <a href="../index.html" class="logo-area">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm8 0c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+      </div>
+      <span class="logo-title">Fill One Line</span>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#apps">Apps</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="mailto:contact@fouralliesstudio.com">Contact Us</a>
+    </nav>
+    <a href="https://play.google.com/store/apps/details?id=com.fill.one.line.puzzle.game.app" class="header-btn" target="_blank" rel="noopener noreferrer">
+      <svg class="play-mini-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      Download on Google Play
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="app-branding">
+            <img src="logo.webp" alt="Fill One Line Logo" class="app-main-logo">
+            <div class="app-branding-text">
+              <h1>Fill One Line</h1>
+              <h2>Connect the Dots, Solve the Puzzle!</h2>
+            </div>
+          </div>
+          <p class="hero-desc">
+            Fill the board with just one line. Easy to learn, hard to master!
+          </p>
+
+          <div class="features-badge-grid">
+            <div class="badge-card">
+              <div class="badge-icon-box bg-orange">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3 3v18h18V3H3zm16 16H5V5h14v14zm-4-4H9v-2h6v2z"/></svg>
+              </div>
+              <span class="badge-text">One Line Puzzle</span>
+            </div>
+            
+            <div class="badge-card">
+              <div class="badge-icon-box bg-purple">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v3c0 2.44 1.72 4.48 4 4.9V19H5v2h14v-2h-2v-4.1c2.28-.42 4-2.46 4-4.9V7c0-1.1-.9-2-2-2zM5 10V7h2v3H5zm14 0h-2V7h2v3z"/></svg>
+              </div>
+              <span class="badge-text">Challenging Levels</span>
+            </div>
+            
+            <div class="badge-card">
+              <div class="badge-icon-box bg-green">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.07 19.64 10.49 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
+              </div>
+              <span class="badge-text">Train Your Brain</span>
+            </div>
+            
+            <div class="badge-card">
+              <div class="badge-icon-box bg-blue">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </div>
+              <span class="badge-text">Relax & Have Fun</span>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="https://play.google.com/store/apps/details?id=com.fill.one.line.puzzle.game.app" class="play-badge-link" target="_blank" rel="noopener noreferrer">
+              <img src="../google-play-badge.svg" alt="Get it on Google Play">
+            </a>
+            <button class="learn-more-btn" onclick="document.getElementById('why-love-it').scrollIntoView({behavior: 'smooth'})">
+              Learn More
+              <svg class="chevron-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Side Dual Phone Mockup -->
+        <div class="mockups-area">
+          
+          <!-- Background Phone (Levels Selector list) -->
+          <div class="iphone-device phone-background">
+            <div class="levels-screen">
+              <div class="levels-header">Levels</div>
+              <div class="levels-grid">
+                <div class="level-cell">
+                  <span class="level-num">51</span>
+                  <span class="level-stars">★★★</span>
+                </div>
+                <div class="level-cell">
+                  <span class="level-num">52</span>
+                  <span class="level-stars">★★★</span>
+                </div>
+                <div class="level-cell">
+                  <span class="level-num">53</span>
+                  <span class="level-stars">★★★</span>
+                </div>
+                <div class="level-cell">
+                  <span class="level-num">54</span>
+                  <span class="level-stars">★★★</span>
+                </div>
+                <div class="level-cell">
+                  <span class="level-num">55</span>
+                  <span class="level-stars">★★★</span>
+                </div>
+                <div class="level-cell level-cell-active">
+                  <span class="level-num">56</span>
+                  <span class="level-stars">☆☆☆</span>
+                </div>
+                <div class="level-cell level-cell-locked">
+                  <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                </div>
+                <div class="level-cell level-cell-locked">
+                  <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foreground Phone (Puzzle connector game screen) -->
+          <div class="iphone-device phone-foreground">
+            <div class="game-screen">
+              <div class="game-status-bar">
+                <span class="back-arrow">‹</span>
+                <span style="font-weight:700; font-size:0.85rem;">Level 56</span>
+                <div style="display:flex; align-items:center; gap:4px; font-weight:700; font-size:0.75rem;">
+                  <span>★</span>
+                  <span>120</span>
+                </div>
+              </div>
+              
+              <div class="puzzle-grid-box">
+                <div class="dots-canvas-replica">
+                  <!-- Custom path replica -->
+                  <div class="puzzle-line line-v1"></div>
+                  <div class="puzzle-line line-h1"></div>
+                  <div class="puzzle-line line-v2"></div>
+                  <div class="puzzle-line line-h2"></div>
+                  <div class="puzzle-line line-v3"></div>
+                  <div class="puzzle-line line-h3"></div>
+                  
+                  <div class="puzzle-dot dot-1"></div>
+                  <div class="puzzle-dot dot-2"></div>
+                  <div class="puzzle-dot dot-3"></div>
+                  <div class="puzzle-dot dot-4"></div>
+                  <div class="puzzle-dot dot-5"></div>
+                  <div class="puzzle-dot dot-6"></div>
+                  <div class="puzzle-dot dot-7"></div>
+                  <div class="puzzle-dot dot-8"></div>
+                  <div class="puzzle-dot dot-9"></div>
+                </div>
+              </div>
+              
+              <div class="controls-row">
+                <div class="ctrl-item">
+                  <div class="ctrl-circle">
+                    <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                  </div>
+                  <span class="ctrl-lbl">Undo</span>
+                </div>
+                <div class="ctrl-item">
+                  <div class="ctrl-circle">
+                    <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+                  </div>
+                  <span class="ctrl-lbl">Restart</span>
+                </div>
+                <div class="ctrl-item" style="position:relative;">
+                  <div class="ctrl-circle" style="background-color:#FFF7ED; border-color:#FFEDD5; color:var(--primary);">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.5 15h-5v-1h5v1zm0-2h-5v-1h5v1z"/></svg>
+                    <span style="position:absolute; top:-3px; right:-3px; width:14px; height:14px; border-radius:50%; background-color:var(--primary); color:white; font-size:0.5rem; display:flex; align-items:center; justify-content:center;">3</span>
+                  </div>
+                  <span class="ctrl-lbl">Hint</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why You'll Love It -->
+    <section id="why-love-it" class="love-it">
+      <div class="container">
+        <h2 class="section-title">Why You'll Love It</h2>
+        <div class="grid-4-cols">
+          <div class="love-card">
+            <div class="love-icon-box icon-brain">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.07 19.64 10.49 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
+            </div>
+            <h3>Boost Your Brain</h3>
+            <p>Improve logic, concentration and problem-solving skills.</p>
+          </div>
+
+          <div class="love-card">
+            <div class="love-icon-box icon-trophy">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v3c0 2.44 1.72 4.48 4 4.9V19H5v2h14v-2h-2v-4.1c2.28-.42 4-2.46 4-4.9V7c0-1.1-.9-2-2-2zM5 10V7h2v3H5zm14 0h-2V7h2v3z"/></svg>
+            </div>
+            <h3>Challenging & Addictive</h3>
+            <p>Hundreds of unique levels that keep you hooked.</p>
+          </div>
+
+          <div class="love-card">
+            <div class="love-icon-box icon-gift">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.65-.5-.65C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"/></svg>
+            </div>
+            <h3>Daily Rewards</h3>
+            <p>Complete daily challenges and earn amazing rewards.</p>
+          </div>
+
+          <div class="love-card">
+            <div class="love-icon-box icon-plane">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5l7 2.5z"/></svg>
+            </div>
+            <h3>Play Anywhere</h3>
+            <p>No internet? No problem! Enjoy offline anytime, anywhere.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <style>
+      .faq-section {
+        padding: 80px 0;
+        background-color: var(--bg-light);
+        border-top: 1px solid var(--border-color);
+      }
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .faq-section .section-title {
+        margin-bottom: 8px;
+        text-align: left;
+      }
+      .faq-section p.subtitle {
+        margin-bottom: 36px;
+        font-size: 1.05rem;
+        color: var(--text-medium);
+      }
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .faq-item {
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: var(--bg-white);
+        transition: all 0.2s ease;
+      }
+      .faq-item:hover {
+        border-color: var(--text-light);
+      }
+      .faq-item.open {
+        border-color: var(--primary);
+        box-shadow: var(--shadow-sm);
+      }
+      .faq-trigger {
+        width: 100%;
+        padding: 20px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      .faq-trigger span {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        flex: 1;
+      }
+      .faq-chevron {
+        width: 20px;
+        height: 20px;
+        color: var(--text-light);
+        transition: transform 0.2s ease;
+      }
+      .faq-item.open .faq-chevron {
+        transform: rotate(180deg);
+        color: var(--primary);
+      }
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+      .faq-item.open .faq-content {
+        max-height: 300px;
+      }
+      .faq-content p {
+        padding: 0 24px 20px 24px;
+        font-size: 0.95rem;
+        color: var(--text-medium);
+        line-height: 1.6;
+      }
+    </style>
+
+    <section class="faq-section" id="faq">
+      <div class="container faq-container">
+        <div class="themes-header" style="max-width: 100%;">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="subtitle">Find answers to common questions about Fill One Line.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What are the rules of Fill One Line?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-content">
+              <p>You need to connect all the circular nodes on the grid using a single continuous stroke. You cannot lift your finger or cross over any line you have already drawn.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What should I do if I get stuck?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-content">
+              <p>You can tap the "Restart" button to reset the current level without penalty, or use a "Hint" (💡) which will automatically draw the next correct segment of the path for you.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Are there time limits on levels?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-content">
+              <p>No, there are no timers. You can take your time, think through the grid structure, and solve the puzzles at your own pace.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>How many levels are available?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-content">
+              <p>We feature hundreds of unique and challenging levels, ranging from basic 3x3 shapes to complex geometric configurations and large multi-node maps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const faqTriggers = document.querySelectorAll(".faq-trigger");
+        faqTriggers.forEach(trigger => {
+          trigger.addEventListener("click", () => {
+            const faqItem = trigger.parentElement;
+            const isOpen = faqItem.classList.contains("open");
+            document.querySelectorAll(".faq-item").forEach(item => {
+              item.classList.remove("open");
+              item.querySelector(".faq-trigger").setAttribute("aria-expanded", "false");
+            });
+            if (!isOpen) {
+              faqItem.classList.add("open");
+              trigger.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Banner -->
+    <section class="cta-banner-sec">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner-left">
+            <div class="cta-node-box">⬡</div>
+            <div class="cta-banner-text">
+              <h2>Ready to challenge your mind?</h2>
+              <p>Connect the dots with one line and become a puzzle master!</p>
+            </div>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.fill.one.line.puzzle.game.app" class="cta-banner-btn" target="_blank" rel="noopener noreferrer">
+            <img src="../google-play-badge.svg" alt="Get it on Google Play">
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="../index.html" class="footer-logo">
+          <div class="footer-logo-icon">Z</div>
+          <span class="footer-logo-title">Four Allies Studio</span>
+        </a>
+        <p class="footer-copyright">© 2025 Fill One Line. All rights reserved.</p>
+      </div>
+      
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="mailto:contact@fouralliesstudio.com">Contact Us</a>
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="social-circle">
+            <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+          <a href="#" class="social-circle">
+            <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 24 4.59z"/></svg>
+          </a>
+          <a href="#" class="social-circle">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

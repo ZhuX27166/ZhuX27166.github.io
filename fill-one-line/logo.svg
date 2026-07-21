@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFA726"/>
+      <stop offset="100%" stop-color="#FB8C00"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)"/>
+  <!-- Stylized white line connection path -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" transform="translate(60, 60) scale(0.75)">
+    <!-- Connection lines -->
+    <path d="M100 100h200v200H100v-200l200 200"/>
+    <!-- Node dots -->
+    <circle cx="100" cy="100" r="24" fill="#FFFFFF" stroke="#FB8C00" stroke-width="8"/>
+    <circle cx="300" cy="100" r="24" fill="#FFFFFF" stroke="#FB8C00" stroke-width="8"/>
+    <circle cx="300" cy="300" r="24" fill="#FFFFFF" stroke="#FB8C00" stroke-width="8"/>
+    <circle cx="100" cy="300" r="24" fill="#FFFFFF" stroke="#FB8C00" stroke-width="8"/>
+  </g>
+</svg>

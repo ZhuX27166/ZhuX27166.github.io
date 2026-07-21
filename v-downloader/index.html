@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Download videos from popular platforms quickly and securely with V Downloader. Support for HD and 4K resolutions. Safe, fast, and free.">
+  <meta name="keywords" content="video downloader, download video, high quality video download, hd video download, safe downloader">
+  <title>V Downloader - Fast. Easy. Powerful. Video Downloader</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  
+  <!-- Google Fonts: Inter and Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="../index.html" class="logo-area">
+        <img src="logo.png" alt="V Downloader Logo" class="app-logo">
+        <span class="app-name">V Downloader</span>
+      </a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home" class="active" data-i18n="nav_home">Home</a></li>
+          <li><a href="#features" data-i18n="nav_features">Features</a></li>
+          <li><a href="#how-it-works" data-i18n="nav_how_it_works">How It Works</a></li>
+          <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+            <svg class="globe-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+            </svg>
+            <span id="currentLangName">English</span>
+            <svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu">
+            <button role="menuitem" data-lang="en">English</button>
+            <button role="menuitem" data-lang="zh">简体中文</button>
+            <button role="menuitem" data-lang="zh-TW">繁體中文</button>
+            <button role="menuitem" data-lang="es">Español</button>
+            <button role="menuitem" data-lang="fr">Français</button>
+          </div>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container hero-container">
+        <!-- Hero Text -->
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="hero-badge" data-i18n="hero_badge">Fast. Easy. Powerful.</span>
+          </div>
+          <h1 class="hero-title" data-i18n="hero_title">
+            Download Videos You <span class="text-primary font-bold">Love</span>
+          </h1>
+          <p class="hero-desc" data-i18n="hero_desc">
+            V Downloader helps you download videos from popular sites quickly and securely.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.fsvideo.downloader.faster.social.video.app" class="play-store-btn">
+              <img src="google-play-badge.svg" alt="Get V Downloader on Google Play">
+            </a>
+          </div>
+          
+          <div class="hero-checkmarks">
+            <div class="checkmark-item">
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span data-i18n="hero_safe">Safe</span>
+            </div>
+            <div class="checkmark-item">
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span data-i18n="hero_no_ads">No ads</span>
+            </div>
+            <div class="checkmark-item">
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span data-i18n="hero_updates">Regular updates</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dual Phone Mockup -->
+        <div class="hero-mockups">
+          <div class="mockup-decor-circle"></div>
+          
+          <!-- Phone 1: Search & Paste -->
+          <div class="phone-mockup phone-1">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="phone-status-bar">
+                  <span class="phone-time">14:27</span>
+                  <div class="phone-status-icons">
+                    <svg viewBox="0 0 24 24" class="status-svg"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.13 19.55 10.53 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="currentColor"/></svg>
+                    <svg viewBox="0 0 24 24" class="status-svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                
+                <div class="phone-header">
+                  <img src="logo.svg" alt="" class="phone-logo-img">
+                  <span data-i18n="phone1_header" class="phone-title-text">V Downloader</span>
+                </div>
+                
+                <!-- Search Bar inside mockup -->
+                <div class="phone-search-container">
+                  <div class="phone-search-bar">
+                    <svg class="phone-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <input type="text" data-i18n-placeholder="phone1_placeholder" placeholder="Search or paste link" disabled>
+                    <button class="phone-paste-btn" data-i18n="phone1_paste_btn">Paste</button>
+                  </div>
+                </div>
+                
+                <!-- Social Grid inside mockup -->
+                <div class="phone-social-grid">
+                  <div class="social-item">
+                    <div class="social-icon youtube-color">
+                      <svg viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.107C19.52 3.545 12 3.545 12 3.545s-7.52 0-9.388.511a3.002 3.002 0 0 0-2.11 2.107C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.107c1.868.511 9.388.511 9.388.511s7.52 0 9.388-.511a3.002 3.002 0 0 0 2.11-2.107c.502-1.87.502-5.837.502-5.837s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="white"/></svg>
+                    </div>
+                    <span class="social-name">YouTube</span>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon facebook-color">
+                      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="white"/></svg>
+                    </div>
+                    <span class="social-name">Facebook</span>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon instagram-color">
+                      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="white"/></svg>
+                    </div>
+                    <span class="social-name">Instagram</span>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon tiktok-color">
+                      <svg viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.74-3.99-1.72-.08 2.5-.01 5-.05 7.5-.07 1.95-.69 3.91-1.95 5.4-1.43 1.73-3.69 2.77-5.94 2.85-2.58.08-5.26-.95-6.84-3.03-1.63-2.14-1.94-5.14-.84-7.6 1.01-2.28 3.25-3.93 5.75-4.18V9.3c-1.39.08-2.82.72-3.67 1.83-1.12 1.43-1.1 3.56-.02 4.95.99 1.3 2.71 1.94 4.3 1.68 1.36-.21 2.61-1.18 3.05-2.5.21-.63.22-1.3.22-1.96V.02z" fill="white"/></svg>
+                    </div>
+                    <span class="social-name">TikTok</span>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon twitter-color">
+                      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="white"/></svg>
+                    </div>
+                    <span class="social-name">Twitter</span>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon vimeo-color">
+                      <svg viewBox="0 0 24 24"><path d="M22.396 7.21c-.086 1.88-1.385 4.453-3.896 7.72-2.61 3.42-4.816 5.13-6.62 5.13-1.115 0-2.062-1.03-2.842-3.09-.52-1.92-1.04-3.84-1.56-5.76-.576-2.126-1.196-3.19-1.863-3.19-.15 0-.663.313-1.542.942L3 7.828c.953-.836 1.998-1.657 3.134-2.463 1.503-1.115 2.632-1.705 3.39-1.765 1.776-.142 2.87.973 3.284 3.344.456 2.61.767 4.225.932 4.846.363 1.488.75 2.234 1.16 2.234.322 0 .91-.516 1.765-1.55.856-1.033 1.31-1.815 1.363-2.348.094-.96-.283-1.44-1.135-1.44-.415 0-.895.093-1.44.28 1.684-5.513 4.908-8.15 9.67-7.915 3.518.17 5.2 2.378 5.043 6.618z" fill="white"/></svg>
+                    </div>
+                    <span class="social-name">Vimeo</span>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon dailymotion-color">
+                      <span class="dm-txt font-bold">d</span>
+                    </div>
+                    <span class="social-name">Dailymotion</span>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon vk-color">
+                      <svg viewBox="0 0 24 24"><path d="M23.45 5.948c.166-.543 0-.943-.78-.943h-2.58c-.656 0-.957.347-1.12.723 0 0-1.32 3.19-3.19 5.253-.6.6-.874.79-.1.2-.423-1.365-.79-5.948-.79-5.948 0-.616-.182-.896-.693-.896h-4.053c-.41 0-.663.303-.663.593 0 .584.877.72 1.01 2.355V11.23c0 1.25-.226 1.48-.724 1.48-1.33 0-4.558-3.21-6.47-6.883-.25-.48-.42-.676-1.08-.676H1.05c-.733 0-.883.347-.883.723 0 .68.873 4.053 4.062 8.52 2.126 3.05 5.114 4.7 7.828 4.7 1.63 0 1.83-.365 1.83-1V17.06c0-.733.155-.88.67-.88.377 0 1.03.187 2.54 1.644 1.73 1.73 2.015 2.51 2.985 2.51h2.58c.733 0 1.1-.365.88-1.093-.23-.714-1.05-1.748-2.14-2.986-.6-.693-1.48-1.444-1.75-1.823-.377-.49-.27-.7 0-1.13 0 0 3.12-4.385 3.44-5.856z" fill="white"/></svg>
+                    </div>
+                    <span class="social-name">VK</span>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon more-color">
+                      <svg class="more-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
+                    </div>
+                    <span data-i18n="phone1_more" class="social-name">More</span>
+                  </div>
+                </div>
+                
+                <!-- Tips card inside mockup -->
+                <div class="phone-tips-card">
+                  <div class="tips-info">
+                    <span class="tips-title" data-i18n="phone1_how_to">How to download?</span>
+                    <span class="tips-desc" data-i18n="phone1_how_to_desc">Learn how to download videos in 3 simple steps.</span>
+                  </div>
+                  <div class="tips-arrow-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Phone 2: Download Manager -->
+          <div class="phone-mockup phone-2">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="phone-status-bar">
+                  <span class="phone-time">14:27</span>
+                  <div class="phone-status-icons">
+                    <svg viewBox="0 0 24 24" class="status-svg"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.13 19.55 10.53 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="currentColor"/></svg>
+                    <svg viewBox="0 0 24 24" class="status-svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                
+                <div class="phone-header list-header">
+                  <span data-i18n="phone2_header" class="phone-title-text">Downloads</span>
+                  <button class="phone-more-actions">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                  </button>
+                </div>
+                
+                <!-- Tab Headers inside mockup -->
+                <div class="phone-tabs">
+                  <span class="active" data-i18n="phone2_tab_all">All</span>
+                  <span data-i18n="phone2_tab_video">Video</span>
+                  <span data-i18n="phone2_tab_audio">Audio</span>
+                  <span data-i18n="phone2_tab_finished">Finished</span>
+                </div>
+                
+                <!-- Downloads List inside mockup -->
+                <div class="phone-downloads-list">
+                  <div class="download-item">
+                    <div class="item-thumb nature-gradient"></div>
+                    <div class="item-details">
+                      <span class="item-title" data-i18n="phone2_item1_title">Beautiful Nature.mp4</span>
+                      <span class="item-meta">1080p • 48.7 MB</span>
+                      <span class="item-status text-green" data-i18n="phone2_completed">Completed</span>
+                    </div>
+                    <button class="item-menu-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    </button>
+                  </div>
+                  
+                  <div class="download-item">
+                    <div class="item-thumb city-gradient"></div>
+                    <div class="item-details">
+                      <span class="item-title" data-i18n="phone2_item2_title">City Lights.mp4</span>
+                      <span class="item-meta">720p • 32.1 MB</span>
+                      <span class="item-status text-green" data-i18n="phone2_completed">Completed</span>
+                    </div>
+                    <button class="item-menu-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    </button>
+                  </div>
+                  
+                  <div class="download-item">
+                    <div class="item-thumb ocean-gradient"></div>
+                    <div class="item-details">
+                      <span class="item-title" data-i18n="phone2_item3_title">Ocean Life.mp4</span>
+                      <span class="item-meta">1080p • 61.3 MB</span>
+                      <span class="item-status text-green" data-i18n="phone2_completed">Completed</span>
+                    </div>
+                    <button class="item-menu-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Bottom Tab Navigation inside mockup -->
+                <div class="phone-bottom-nav">
+                  <div class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <span data-i18n="phone2_nav_browser">Browser</span>
+                  </div>
+                  <div class="nav-item active">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                    <span data-i18n="phone2_nav_downloads">Downloads</span>
+                  </div>
+                  <div class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zm-8-2l3-3.86 2.14 2.58 3-3.86L20 14H10z"/></svg>
+                    <span data-i18n="phone2_nav_library">Library</span>
+                  </div>
+                  <div class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                    <span data-i18n="phone2_nav_me">Me</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section id="features" class="features-section">
+      <div class="container features-container">
+        <!-- Feature 1: Ultra Fast -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap blue-bg">
+            <svg class="feature-svg-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat_ultra_fast_title">Ultra Fast</h3>
+          <p class="feature-desc" data-i18n="feat_ultra_fast_desc">Download videos up to 10x faster.</p>
+        </div>
+        
+        <!-- Feature 2: Easy to Use -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap blue-bg-light">
+            <svg class="feature-svg-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat_easy_title">Easy to Use</h3>
+          <p class="feature-desc" data-i18n="feat_easy_desc">Just copy, paste and download.</p>
+        </div>
+        
+        <!-- Feature 3: High Quality -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap blue-bg">
+            <!-- Dynamic HD Icon -->
+            <span class="hd-badge-svg">HD</span>
+          </div>
+          <h3 class="feature-title" data-i18n="feat_hq_title">High Quality</h3>
+          <p class="feature-desc" data-i18n="feat_hq_desc">Support HD videos up to 4K.</p>
+        </div>
+        
+        <!-- Feature 4: Secure & Private -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap blue-bg-light">
+            <svg class="feature-svg-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat_secure_title">Secure & Private</h3>
+          <p class="feature-desc" data-i18n="feat_secure_desc">100% safe. We do not collect your data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-section">
+      <div class="container how-container">
+        <span class="section-subtitle">HOW IT WORKS</span>
+        <h2 class="section-title" data-i18n="how_title">Download in 3 Simple Steps</h2>
+        
+        <div class="steps-container">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-icon-wrap">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+            </div>
+            <h3 data-i18n="step_1_title">1. Copy Link</h3>
+            <p data-i18n="step_1_desc">Copy the video link from any website or app.</p>
+          </div>
+          
+          <!-- Connect Arrow 1 -->
+          <div class="step-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="4 4"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-icon-wrap">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            </div>
+            <h3 data-i18n="step_2_title">2. Paste & Detect</h3>
+            <p data-i18n="step_2_desc">Paste the link into V Downloader and click Detect.</p>
+          </div>
+          
+          <!-- Connect Arrow 2 -->
+          <div class="step-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="4 4"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-icon-wrap">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            </div>
+            <h3 data-i18n="step_3_title">3. Download</h3>
+            <p data-i18n="step_3_desc">Choose quality and download instantly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section id="faq" class="faq-section">
+      <div class="container faq-container">
+        <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
+        
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq_q1">Is V Downloader free to use?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-content">
+              <p data-i18n="faq_a1">Yes, V Downloader is 100% free to download and use, with no hidden subscriptions.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq_q2">Which video websites are supported?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-content">
+              <p data-i18n="faq_a2">We support major social media and video sharing networks, including YouTube, Facebook, Instagram, TikTok, Twitter, Vimeo, and more.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq_q3">Can I download videos in high definition?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-content">
+              <p data-i18n="faq_a3">Yes, our app detects all available resolutions provided by the source. You can download videos in HD 1080p, 2K, or even 4K where available.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq_q4">Is it safe to use V Downloader?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-content">
+              <p data-i18n="faq_a4">Absolutely. V Downloader is safe and respects your privacy. We do not collect or store your personal search queries or downloaded history.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner Section -->
+    <section class="bottom-cta-section">
+      <div class="container cta-container">
+        <div class="cta-card">
+          <div class="cta-left">
+            <div class="cta-app-icon-wrap">
+              <img src="logo.svg" alt="V Downloader Icon" class="cta-app-logo">
+            </div>
+            <div class="cta-text">
+              <h2 data-i18n="cta_title">Ready to download your favorite videos?</h2>
+              <p data-i18n="cta_desc">Install V Downloader on your Android device and start downloading now!</p>
+            </div>
+          </div>
+          <div class="cta-right">
+            <a href="https://play.google.com/store/apps/details?id=com.fsvideo.downloader.faster.social.video.app" class="play-store-btn-large">
+              <img src="google-play-badge.svg" alt="Get V Downloader on Google Play">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-brand font-bold">V Downloader</span>
+        <span class="footer-copy" data-i18n="footer_desc">© 2025 V Downloader. All rights reserved.</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://sites.google.com/view/vdownloaderbestapp/home" target="_blank" rel="noopener noreferrer" class="footer-link" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="#" class="footer-link" data-i18n="footer_terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Translation & Core Logic Scripts -->
+  <script src="i18n.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2A3B"/>
+      <stop offset="100%" stop-color="#D60015"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)"/>
+  <!-- Bold Stylized V -->
+  <path d="M120 150h70l66 160 66-160h70L287 380h-62L120 150z" fill="#FFFFFF"/>
+  <!-- Download arrow at the bottom right/center -->
+  <path d="M256 200l-45 45h30v60h30v-60h30l-45-45z" fill="#FFFFFF"/>
+  <!-- Horizontal tray under the arrow -->
+  <rect x="206" y="320" width="100" height="15" rx="7.5" fill="#FFFFFF"/>
+</svg>
