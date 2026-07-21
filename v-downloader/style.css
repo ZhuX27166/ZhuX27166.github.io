@@ -64,6 +64,8 @@ a {
   text-decoration: none;
   color: inherit;
   transition: var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 button {
@@ -72,6 +74,8 @@ button {
   background: none;
   font-family: inherit;
   transition: var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 ul {

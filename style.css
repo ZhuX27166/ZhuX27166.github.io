@@ -61,6 +61,8 @@ a {
   text-decoration: none;
   color: inherit;
   transition: var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 button {
@@ -69,6 +71,8 @@ button {
   background: none;
   font-family: inherit;
   transition: var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 ul {
@@ -1343,6 +1347,10 @@ img {
   .float-icon {
     width: 44px;
     height: 44px;
+  }
+  
+  .float-5, .float-6 {
+    display: none;
   }
   
   .float-char {
